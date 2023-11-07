@@ -28,4 +28,7 @@ public class Character {
     public boolean isAlive() {
         return health > 0;
     }
+    public void heal(int amount) {
+    health += amount;
+    }
 }
