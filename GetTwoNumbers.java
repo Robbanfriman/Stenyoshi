@@ -13,7 +13,7 @@ import java.util.Scanner;
         System.out.println("You entered the first number: " + firstNumber);
         System.out.println("You entered the second number: " + secondNumber);
    
-        System.out.println("Your numbers");
+        System.out.println("Your numbers are: " + firstNumber + "and " + secondNumber);
         System.out.println("Choose an operation:");
         System.out.println("1. Add");
         System.out.println("2. Subtract");
@@ -29,6 +29,7 @@ import java.util.Scanner;
         } else {
             System.out.println("Invalid choice");
         }
+
 
         scanner.close();
     }
