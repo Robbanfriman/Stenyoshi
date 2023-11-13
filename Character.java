@@ -3,10 +3,13 @@ public class Character {
     private int health;
     private int attackPower;
 
-    public Character(String name, int health, int attackPower) {
+    public Character(String name, int health, int attackPower, int i, int j) {
         this.name = name;
         this.health = health;
         this.attackPower = attackPower;
+    }
+
+    public Character(String name2, int health2, int attackPower2, int i, int j) {
     }
 
     public String getName() {
@@ -30,5 +33,9 @@ public class Character {
     }
     public void heal(int amount) {
     health += amount;
+    }
+
+    public boolean engageInCombat() {
+        return false;
     }
 }
