@@ -39,6 +39,7 @@ class StenYoshiTheGame {
                 break;
             default:
                 System.out.println("Invalid choice.");
+                System.out.println();
                 displayOptions(player);
                 break;
         }
@@ -75,11 +76,12 @@ class StenYoshiTheGame {
                 break;
             case "2":
                 System.out.println("Elvira fumbles and trips on the door. The door is now open.");
-                System.out.println("You are now on stage two, the living room.");
+                System.out.println("You are now on stage two, the livingroom.");
                 
                 break;
             default:
                 System.out.println("Invalid choice.");
+                System.out.println();
                 displayOptions(player);
                 break;
         }
@@ -93,6 +95,7 @@ class StenYoshiTheGame {
                 return new Yoshi(name);
             default:
                 System.out.println("Invalid choice. Defaulting to Sten.");
+                System.out.println();
                 return new Sten(name);
         }
     }
@@ -106,17 +109,12 @@ class StenYoshiTheGame {
         Character player = createPlayer(name, choice);
 
         System.out.println("Welcome, " + player.name + "! Your adventure begins...");
-    
-    
-    
-    
-       
         player.displayStats();
-            System.out.println("   /\\_/\\   ");
-    System.out.println("  / o - \\  ");
-    System.out.println(" (   \"   ) ");
-    System.out.println("  \\~(*)~/  ");
-    System.out.println("   // \\\\   "); 
+     System.out.println("   /\\_/\\   ");
+     System.out.println("  / o - \\  ");
+     System.out.println(" (   \"   ) ");
+     System.out.println("  \\~(*)~/  ");
+     System.out.println("   // \\\\   "); 
 
         displayOptions(player);
     }
