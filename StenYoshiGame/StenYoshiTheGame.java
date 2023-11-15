@@ -8,6 +8,23 @@ class StenYoshiTheGame {
         return scanner.nextLine();
     }
 
+    public static void startGame() {
+        System.out.println("Welcome to StenYoshiTheGame!");
+        String name = getPlayerName();
+        String choice = chooseCharacter();
+        Character player = createPlayer(name, choice);
+
+        System.out.println("Welcome, " + player.name + "! Your adventure begins...");
+        player.displayStats();
+        System.out.println("   /\\_/\\   ");
+        System.out.println("  / o - \\  ");
+        System.out.println(" (   \"   ) ");
+        System.out.println("  \\~(*)~/  ");
+        System.out.println("   // \\\\   "); 
+
+        displayOptions(player);
+    }
+
     public static String chooseCharacter() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Choose your character:");
@@ -17,7 +34,7 @@ class StenYoshiTheGame {
         System.out.print("Enter the number of your choice: ");
         return scanner.nextLine();
     }
-
+//Level 1
     public static void displayOptions(Character player) {
         System.out.println("Choose your next action:");
         System.out.println("1. Go to bed");
@@ -69,7 +86,7 @@ class StenYoshiTheGame {
                 System.out.println("Do you want to go to the door again? (yes/no)");
                 String goAgain = scanner.nextLine();
                 if (goAgain.equalsIgnoreCase("yes")) {
-                    goToDoor(player);
+                    backToDoor();
                 } else {
                     displayOptions(player);
                 }
@@ -100,22 +117,15 @@ class StenYoshiTheGame {
         }
     }
 
-    public static void startGame() {
-        System.out.println("Welcome to StenYoshiTheGame!");
+    public static void backToDoor() {
+        System.out.println("You're back at the door");
+        System.out.println("1. Let her lift you up again.");
+        System.out.println("2. Avoid Elvira this time.");
 
-        String name = getPlayerName();
-        String choice = chooseCharacter();
+        Scanner scanner = new Scanner(System.in);
+        String choice = scanner.nextLine();
 
-        Character player = createPlayer(name, choice);
-
-        System.out.println("Welcome, " + player.name + "! Your adventure begins...");
-        player.displayStats();
-     System.out.println("   /\\_/\\   ");
-     System.out.println("  / o - \\  ");
-     System.out.println(" (   \"   ) ");
-     System.out.println("  \\~(*)~/  ");
-     System.out.println("   // \\\\   "); 
-
-        displayOptions(player);
+    
     }
 }
+
