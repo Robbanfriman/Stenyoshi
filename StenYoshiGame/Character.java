@@ -1,6 +1,5 @@
 package StenYoshiGame;
 
-
 class Character {
     String name;
     int health;

@@ -1,5 +1,4 @@
 package StenYoshiGame;
-
 import java.util.Scanner;
 
 class StenYoshiTheGame {
