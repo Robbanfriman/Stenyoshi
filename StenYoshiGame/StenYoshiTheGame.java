@@ -107,7 +107,17 @@ class StenYoshiTheGame {
         Character player = createPlayer(name, choice);
 
         System.out.println("Welcome, " + player.name + "! Your adventure begins...");
+    
+    
+    
+    
+       
         player.displayStats();
+            System.out.println("   /\\_/\\   ");
+    System.out.println("  / o - \\  ");
+    System.out.println(" (   \"   ) ");
+    System.out.println("  \\~(*)~/  ");
+    System.out.println("   // \\\\   "); 
 
         displayOptions(player);
     }
