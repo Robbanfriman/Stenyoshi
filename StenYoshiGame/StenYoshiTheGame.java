@@ -77,7 +77,7 @@ class StenYoshiTheGame {
             case "2":
                 System.out.println("Elvira fumbles and trips on the door. The door is now open.");
                 System.out.println("You are now on stage two, the living room.");
-                // Add code for stage two (living room) here...
+                
                 break;
             default:
                 System.out.println("Invalid choice.");
