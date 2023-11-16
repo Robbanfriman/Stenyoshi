@@ -139,7 +139,7 @@ switch (choice) {
             }
             break;
         case "2":
-            System.out.println("You avoid Elvira this time.");
+            System.out.println("Elvira fumbles and trips on the door. The door is now open.");
             System.out.println("You are now on stage two, the living room.");
             // Continue the story or add more options here
             break;
