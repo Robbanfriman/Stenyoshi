@@ -124,7 +124,6 @@ class StenYoshiTheGame {
 
         Scanner scanner = new Scanner(System.in);
         String choice = scanner.nextLine();
-
     
     }
 }
