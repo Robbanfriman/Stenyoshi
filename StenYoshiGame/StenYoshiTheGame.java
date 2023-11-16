@@ -2,6 +2,8 @@ package StenYoshiGame;
 import java.util.Scanner;
 
 class StenYoshiTheGame {
+    private static Character player;
+
     public static String getPlayerName() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter your name: ");
@@ -124,7 +126,29 @@ class StenYoshiTheGame {
 
         Scanner scanner = new Scanner(System.in);
         String choice = scanner.nextLine();
-    
+
+switch (choice) {
+        case "1":
+            System.out.println("You let Elvira lift you up again.");
+            System.out.println("Do you want to go to the door again? (yes/no)");
+            String goAgain = scanner.nextLine();
+            if (goAgain.equalsIgnoreCase("yes")) {
+                backToDoor();
+            } else {
+                displayOptions(player);
+            }
+            break;
+        case "2":
+            System.out.println("You avoid Elvira this time.");
+            System.out.println("You are now on stage two, the living room.");
+            // Continue the story or add more options here
+            break;
+        default:
+            System.out.println("Invalid choice.");
+            System.out.println();
+            backToDoor();
+            break;
+        }
     }
 }
 
