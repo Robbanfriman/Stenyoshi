@@ -10,5 +10,6 @@ public class MainStenYoshi {
 
         game.startGame();
         // game.theOutside();
+        // game.livingRoomOptions();
     }
 }
