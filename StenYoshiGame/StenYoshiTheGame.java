@@ -3,9 +3,9 @@ import java.util.Scanner;
 
 class StenYoshiTheGame {
     private static Character player;
-
+     static Scanner scanner = new Scanner(System.in);
     public static String getPlayerName() {
-        Scanner scanner = new Scanner(System.in);
+       
         System.out.print("Enter your name: ");
         return scanner.nextLine();
     }
@@ -28,7 +28,7 @@ class StenYoshiTheGame {
     }
 
     public static String chooseCharacter() {
-        Scanner scanner = new Scanner(System.in);
+        
         System.out.println("Choose your character:");
         System.out.println("1. Sten");
         System.out.println("2. Yoshi");
@@ -43,7 +43,7 @@ class StenYoshiTheGame {
         System.out.println("2. Start exploring");
         System.out.println("3. Go to the door");
 
-        Scanner scanner = new Scanner(System.in);
+        
         String choice = scanner.nextLine();
 
         switch (choice) {
@@ -79,7 +79,7 @@ class StenYoshiTheGame {
         System.out.println("1. Let her lift you up.");
         System.out.println("2. Avoid Elvira.");
 
-        Scanner scanner = new Scanner(System.in);
+        
         String choice = scanner.nextLine();
 
         switch (choice) {
@@ -124,7 +124,7 @@ class StenYoshiTheGame {
         System.out.println("1. Let her lift you up again.");
         System.out.println("2. Avoid Elvira this time.");
 
-        Scanner scanner = new Scanner(System.in);
+        
         String choice = scanner.nextLine();
 
 switch (choice) {
