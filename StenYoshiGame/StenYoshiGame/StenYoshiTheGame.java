@@ -36,6 +36,7 @@ public Character createPlayer(String name, String choice) {
         System.out.println("   // \\\\   "); 
 
         displayOptions(player);
+        
     }
 
     public String chooseCharacter() {
@@ -139,7 +140,7 @@ switch (choice) {
             break;
         case "2":
             System.out.println("Elvira fumbles and trips on the door. The door is now open.");
-            System.out.println("You are now on stage two, the living roaom.");
+            System.out.println("You are now on stage two, the living room.");
             livingRoomOptions();
             break;
         default:
@@ -168,10 +169,16 @@ switch (choice) {
             if (goBack.equalsIgnoreCase("yes")) {
                 System.out.println("You look on your pet for a while and then you head back to the livingroom");
                 livingRoomOptions();
-            } else {
+            } else if (goBack.equalsIgnoreCase("no"))  {
               System.out.println("You Sleep on bed for a while and then you step on Elvira on the way back to the livingroom");
               livingRoomOptions();
             }
+            else {
+                System.out.println("Hey you, I asked yes or no!.");
+                System.out.println("You feel a bit confused before heading back to the living room");
+                livingRoomOptions();
+            }
+
             break;
     
         default:
@@ -192,17 +199,20 @@ switch (choice) {
         case "1":
             System.out.println("You crawl under the couch, you get a bit dusty but you find nothing.");
             System.out.println("You crawl back out again.");
+            System.out.println("What do you feel like doing now?");
             livingRoomActions();
             break;
         case "2": 
             System.out.println("You jump up on the table there you find a remote control, you feel like it's time for some normal cat stuff and push it down");
             System.out.println("You then jump back on the floor");
+            System.out.println("What do you feel like doing now?");
             livingRoomActions();
             break;
         case "3":
             System.out.println("You move closer to the tv, you see there is a green field with pets chasing something.");
             System.out.println("You feel that it looks fun and you stand up and tries to catch the little round thing.");
-            System.out.println("After a while you feel bored and turn your back on the tv and starts licking your tail for a while");
+            System.out.println("After a while you feel bored and turn your back on the tv and starts licking your tail for a while.");
+            System.out.println("What do you feel like doing now? ");
             livingRoomActions();
             break;
         case "4":
@@ -213,10 +223,40 @@ switch (choice) {
             System.out.println("SHe opens the door and throws you out.");
             System.out.println("\"Tonight you will be sleeping outside\" she says.");
             System.out.println("You are now on stage three, the outside.");
+            theOutside();
+            break;
 
         default:
+            System.out.println("Invalid choice.");
+            livingRoomActions();
             break;
     }    
+    }
+   public void theOutside() {
+            System.out.println("You have finally escaped the house, what do you feel like doing first with you new found freedom? ");
+            System.out.println("1. Do you want to explore the garden?");
+            System.out.println("2. Do you want to go to the road?");
+            System.out.println("3. Do you want to try to get back inside");
+
+        String outsideActions = scanner.nextLine();
+
+        switch (outsideActions) {
+            
+            case "1":
+                System.out.println("You look around at grass when you see a mouse running by");
+                break;
+            
+            case "2":
+                System.out.println("You start walking down the street when a stranger comes up to you.");
+                System.out.println("Its a male pet, he introduces himself as Deni. and gave you some candy");
+                System.out.println("You look at the candy in disbelief at first and then when you taste it you feel a sudden kick of energy");
+                break;
+        
+            default:
+                System.out.println("Invalid choice.");
+                theOutside();
+                break;
+        }
     }
 
 }

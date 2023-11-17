@@ -9,5 +9,6 @@ public class MainStenYoshi {
         StenYoshiTheGame game = new StenYoshiTheGame();
 
         game.startGame();
+        // game.theOutside();
     }
 }
