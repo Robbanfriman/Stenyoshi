@@ -2,15 +2,15 @@ package StenYoshiGame;
 import java.util.Scanner;
 
 class StenYoshiTheGame {
-    private static Character player;
-     static Scanner scanner = new Scanner(System.in);
-    public static String getPlayerName() {
+    private Character player;
+    public static Scanner scanner = new Scanner(System.in);
+    public String getPlayerName() {
        
         System.out.print("Enter your name: ");
         return scanner.nextLine();
     }
 
-    public static void startGame() {
+    public void startGame() {
         System.out.println("Welcome to StenYoshiTheGame!");
         String name = getPlayerName();
         String choice = chooseCharacter();
@@ -27,7 +27,7 @@ class StenYoshiTheGame {
         displayOptions(player);
     }
 
-    public static String chooseCharacter() {
+    public String chooseCharacter() {
         
         System.out.println("Choose your character:");
         System.out.println("1. Sten");
@@ -37,7 +37,7 @@ class StenYoshiTheGame {
         return scanner.nextLine();
     }
 //Level 1
-    public static void displayOptions(Character player) {
+    public void displayOptions(Character player) {
         System.out.println("Choose your next action:");
         System.out.println("1. Go to bed");
         System.out.println("2. Start exploring");
@@ -64,17 +64,17 @@ class StenYoshiTheGame {
         }
     }
 
-    public static void goToBed(Character player) {
+    public void goToBed(Character player) {
         System.out.println("You are now rested.");
         displayOptions(player);
     }
 
-    public static void startExploring(Character player) {
+    public void startExploring(Character player) {
         System.out.println("You seem to be locked into the bedroom of your pet Elvira. She is now sleeping on the bed.");
         displayOptions(player);
     }
 
-    public static void goToDoor(Character player) {
+    public void goToDoor(Character player) {
         System.out.println("Elvira woke up. She is moving towards you.");
         System.out.println("1. Let her lift you up.");
         System.out.println("2. Avoid Elvira.");
@@ -106,7 +106,7 @@ class StenYoshiTheGame {
         }
     }
 
-    public static Character createPlayer(String name, String choice) {
+    public Character createPlayer(String name, String choice) {
         switch (choice) {
             case "1":
                 return new Sten(name);
@@ -119,7 +119,7 @@ class StenYoshiTheGame {
         }
     }
 
-    public static void backToDoor() {
+    public void backToDoor() {
         System.out.println("You're back at the door");
         System.out.println("1. Let her lift you up again.");
         System.out.println("2. Avoid Elvira this time.");
