@@ -8,8 +8,10 @@ public class MainStenYoshi {
         
         StenYoshiTheGame game = new StenYoshiTheGame();
 
-        game.startGame();
+        //  game.startGame();
         // game.theOutside();
         // game.livingRoomOptions();
+        game.keepWalking();
     }
 }
+    

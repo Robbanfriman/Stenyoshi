@@ -1,6 +1,8 @@
 package StenYoshiGame;
 import java.util.Scanner;
 
+import javax.swing.SwingConstants;
+
 class StenYoshiTheGame {
     private Character player;
     public static Scanner scanner = new Scanner(System.in);
@@ -48,7 +50,7 @@ public Character createPlayer(String name, String choice) {
         System.out.print("Enter the number of your choice: ");
         return scanner.nextLine();
     }
-//Level 1
+
     public void displayOptions(Character player) {
         System.out.println("Choose your next action:");
         System.out.println("1. Go to bed");
@@ -244,12 +246,18 @@ switch (choice) {
             
             case "1":
                 System.out.println("You look around at grass when you see a mouse running by");
-                break;
-            
-            case "2":
+                System.out.println("Do you want to chase the mouse? (yes/no)");
+                String mouseAction = scanner.nextLine();
+                    if (mouseAction.equalsIgnoreCase("yes"));
+                        System.out.println("You are chasing the mouse, manage to catch the mouse in its tail and the mouse turns around and bites you on the nose.");
+                        System.out.println("");
+                                
+
+                case "2":
                 System.out.println("You start walking down the street when a stranger comes up to you.");
                 System.out.println("Its a male pet, he introduces himself as Deni. and gave you some candy");
                 System.out.println("You look at the candy in disbelief at first and then when you taste it you feel a sudden kick of energy");
+                keepWalking();
                 break;
         
             default:
@@ -258,6 +266,37 @@ switch (choice) {
                 break;
         }
     }
+public void keepWalking() {
+    System.out.println("You keep walking down the street when you meet a dog");
+    System.out.println("What do you want to do?");
+    System.out.println("1. Attack the dog?");
+    System.out.println("2. Run away?");
+
+    String dogActions = scanner.nextLine();
+
+    switch (dogActions) {
+        case "1":
+            System.out.println("You jump on the dogs head, the dog manage to bite you in the tail");
+            System.out.println("do you want to attack the dog again? (yes/no)");
+         String attackAgain = scanner.nextLine();
+             if (attackAgain.equalsIgnoreCase("yes")) {
+                System.out.println("You attack the dog again, and the dog runs away");
+                keepWalking();
+             }
+             else if (attackAgain.equalsIgnoreCase("no")){
+                System.out.println("You run away from the the dog.");
+             }
+             else {
+                System.out.println("Run you confused cat!");
+                break;
+             }
+        case "2":
+             System.out.println(" You run away from the dog.");
+             break;
+            
+
+    }
+}
 
 }
        
