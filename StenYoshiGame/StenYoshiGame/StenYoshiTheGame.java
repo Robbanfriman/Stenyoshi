@@ -1,4 +1,5 @@
 package StenYoshiGame;
+
 import java.util.Scanner;
 
 
@@ -29,7 +30,7 @@ public Character createPlayer(String name, String choice) {
         String choice = chooseCharacter();
         player = createPlayer(name, choice); 
     
-        System.out.println("Welcome, " + player.name + "! Your adventure begins...");
+        System.out.println("Welcome, " + player.name + "! Your adventure begins.");
         player.displayStats();
         System.out.println("   /\\_/\\   ");
         System.out.println("  / o - \\  ");
@@ -43,8 +44,8 @@ public Character createPlayer(String name, String choice) {
     public String chooseCharacter() {
         
         System.out.println("Choose your character:");
-        System.out.println("1. Sten");
-        System.out.println("2. Yoshi");
+        System.out.println("1. Sten.");
+        System.out.println("2. Yoshi.");
 
         System.out.print("Enter the number of your choice: ");
         return scanner.nextLine();
@@ -52,10 +53,10 @@ public Character createPlayer(String name, String choice) {
     }
 
     public void bedRoomOptions(Character player) {
-        System.out.println("Choose your next action:");
-        System.out.println("1. Go to bed");
-        System.out.println("2. Start exploring");
-        System.out.println("3. Go to the door");
+        System.out.println("Choose your next action.:");
+        System.out.println("1. Go to bed.");
+        System.out.println("2. Start exploring.");
+        System.out.println("3. Go to the door.");
 
         
         String choice = scanner.nextLine();
@@ -122,7 +123,7 @@ public Character createPlayer(String name, String choice) {
         }
     }
     public void backToDoor() {
-        System.out.println("You're back at the door");
+        System.out.println("You're back at the door.");
         System.out.println("1. Let her lift you up again.");
         System.out.println("2. Avoid Elvira this time.");
 
@@ -155,6 +156,7 @@ switch (choice) {
         
     }
     public void livingRoomOptions() {
+        System.out.println();
         System.out.println("You are now in the living room. What do you want to do?");
         System.out.println("1. Look around in the room");
         System.out.println("2. Go back to bedroom");
@@ -177,7 +179,7 @@ switch (choice) {
             }
             else {
                 System.out.println("Hey you, I asked yes or no!.");
-                System.out.println("You feel a bit confused before heading back to the living room");
+                System.out.println("You feel a bit confused before heading back to the living room.");
                 livingRoomOptions();
             }
 
@@ -206,7 +208,7 @@ switch (choice) {
             break;
         case "2": 
             System.out.println("You jump up on the table there you find a remote control, you feel like it's time for some normal cat stuff and push it down");
-            System.out.println("You then jump back on the floor");
+            System.out.println("You then jump back on the floor.");
             System.out.println("What do you feel like doing now?");
             livingRoomActions();
             break;
@@ -224,7 +226,11 @@ switch (choice) {
             System.out.println("This time you cant avoid her so she lifts you up in the neck, and walks towards the entrance.");
             System.out.println("SHe opens the door and throws you out.");
             System.out.println("\"Tonight you will be sleeping outside\" she says.");
+            System.out.println();
             System.out.println("You are now on stage three, the outside.");
+            System.out.println();
+            System.out.println("You have finally escaped the house, what do you feel like doing first with you new found freedom? ");
+
             theOutside();
             break;
 
@@ -235,10 +241,9 @@ switch (choice) {
     }    
     }
    public void theOutside() {
-            System.out.println("You have finally escaped the house, what do you feel like doing first with you new found freedom? ");
             System.out.println("1. Do you want to explore the garden?");
             System.out.println("2. Do you want to go to the road?");
-            System.out.println("3. Do you want to try to get back inside");
+            System.out.println("3. Do you want to try to get back inside?");
 
         String outsideActions = scanner.nextLine();
 
@@ -248,19 +253,39 @@ switch (choice) {
                 System.out.println("You look around at grass when you see a mouse running by");
                 System.out.println("Do you want to chase the mouse? (yes/no)");
                 String mouseAction = scanner.nextLine();
-                    if (mouseAction.equalsIgnoreCase("yes"));
+                 {
+                    
+                }
+                    if (mouseAction.equalsIgnoreCase("yes")){
                         System.out.println("You are chasing the mouse, manage to catch the mouse in its tail and the mouse turns around and bites you on the nose.");
-                        System.out.println("");
-                                
+                        player.reduceHealth(50);
+                        
+                        System.out.println("You look around and the mouse is nowhere to be found.");
+                        System.out.println();
+                        theOutside();
+                    }
+                    else if (mouseAction.equalsIgnoreCase("no")) { 
+                        System.out.println("You look on the mouse while it runs away.");
+                        theOutside();
+                    }
+                 
+                    else {
+                        theOutside();
+                    }             
 
                 case "2":
                 System.out.println("You start walking down the street when a stranger comes up to you.");
-                System.out.println("Its a male pet, he introduces himself as Deni. and gave you some candy");
-                System.out.println("You look at the candy in disbelief at first and then when you taste it you feel a sudden kick of energy");
+                System.out.println("Its a male pet, he introduces himself as Deni. and gave you some candy.");
+                System.out.println("You look at the candy in disbelief at first and then when you taste it you feel a sudden kick of energy.");
                 player.increaseHealth(50);
+                System.out.println("You now have " + player.health + " Health.");
                 System.out.println();
                 keepWalking();
                 break;
+
+                case "3":
+                System.out.println("You jump up on the windowsill, and scratch the window, no one opens.");
+                theOutside();
         
             default:
                 System.out.println("Invalid choice.");
@@ -269,40 +294,57 @@ switch (choice) {
         }
     }
 public void keepWalking() {
-    System.out.println("You keep walking down the street when you meet a dog");
+    System.out.println("You keep walking down the street when you meet a dog.");
     System.out.println("What do you want to do?");
-    System.out.println("1. Attack the dog?");
-    System.out.println("2. Run away?");
+    System.out.println("1. Attack the dog.");
+    System.out.println("2. Run away.");
 
     String dogActions = scanner.nextLine();
 
     switch (dogActions) {
         case "1":
-            System.out.println("You jump on the dog's head, the dog manages to bite you in the tail");
+            System.out.println("You jump on the dog's head, the dog manages to bite you in the tail.");
             player.reduceHealth(50); 
             if (player.health > 0) {
                 System.out.println("Do you want to attack the dog again? (yes/no)");
                 String attackAgain = scanner.nextLine();
                 if (attackAgain.equalsIgnoreCase("yes")) {
                     System.out.println("You attack the dog again, and the dog runs away");
-                    keepWalking();
+                    goingHome();
                 } else if (attackAgain.equalsIgnoreCase("no")) {
-                    System.out.println("You decide not to attack the dog again. Remaining health: " + player.health);
+                    System.out.println("You decide not to attack the dog again.");
+                    goingHome();
                 } else {
-                    System.out.println("Run, you confused cat! Remaining health: " + player.health);
+                    System.out.println("Run, you confused cat! ");
+                    goingHome();
                 }
             }
             break;
 
         case "2":
-            System.out.println("You run away from the dog. Remaining health: " + player.health);
+            System.out.println("You run away from the dog. ");
+            goingHome();
             break;
 
     }
 }
-
+private void goingHome() {
+    System.out.println();
+    System.out.println("You feel like you had enough adventures for today and heads back to the house, you go up to the window");
+    System.out.println("You think that if you are annoying enough she will let you in so you start scratching the window" );
+    System.out.println("And then Elvira comes and lets you in");
+    System.out.println("You go back to your bed for sleep");
+    System.out.println("Thanks for playing");
+     
+    restart start = new restart();
+    start.playAgain();
+              
+    }    
 }
+
+
+    
        
-        
+
         
     

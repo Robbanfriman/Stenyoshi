@@ -20,10 +20,15 @@ class Character {
     public void reduceHealth(int damage) {
         health -= damage;
         if (health <= 0) {
-            System.out.println(name + " received " + damage + " damage and has run out of health. Game Over!");
-            System.out.println("Do you want to play again yes/no");
+            System.out.println("You received " + damage + " damage and has run out of health. Game Over!");
+            System.out.println();
+            
+            restart start = new restart();
+            start.playAgain();
+    
+
         } else {
-            System.out.println(name + " received " + damage + " damage. Remaining health: " + health);
+            System.out.println("You received " + damage + " damage. Remaining health: " + health);
         }
     }
     public void increaseHealth( int energy) {

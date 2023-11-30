@@ -2,7 +2,7 @@ package StenYoshiGame;
 
 
 
-public class MainStenYoshi {
+public class StenYoshi {
     public static void main(String[] args) {
         
         
