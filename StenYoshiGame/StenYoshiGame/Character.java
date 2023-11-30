@@ -17,12 +17,19 @@ class Character {
         System.out.println("Stamina: " + stamina);
     }
     
-	public void setHealth(int health) {
-		if(health < 0 ){
-			health = 0;
-		}
-		this.health = health;
-	}
+    public void reduceHealth(int damage) {
+        health -= damage;
+        if (health <= 0) {
+            System.out.println(name + " received " + damage + " damage and has run out of health. Game Over!");
+            System.out.println("Do you want to play again yes/no");
+        } else {
+            System.out.println(name + " received " + damage + " damage. Remaining health: " + health);
+        }
+    }
+    public void increaseHealth( int energy) {
+        health += energy;
 
+    }
 }
+
 
