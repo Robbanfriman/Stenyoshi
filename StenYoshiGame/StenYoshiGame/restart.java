@@ -11,9 +11,9 @@ public class restart {
             
             if (playAgain.equalsIgnoreCase("yes")) {
                 game.startGame();
-            } else if (playAgain.equalsIgnoreCase("no")) {
+            } 
+            else if (playAgain.equalsIgnoreCase("no")) {
                 System.out.println("Thanks for playing. Have a good day!");
-                scanner.close();
                 break;
             } else {
                 System.out.println("Invalid choice. Please enter 'yes' or 'no'.");

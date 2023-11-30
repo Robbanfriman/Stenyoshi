@@ -271,7 +271,8 @@ switch (choice) {
                  
                     else {
                         theOutside();
-                    }             
+                    }
+                break;          
 
                 case "2":
                 System.out.println("You start walking down the street when a stranger comes up to you.");
@@ -334,11 +335,9 @@ private void goingHome() {
     System.out.println("You think that if you are annoying enough she will let you in so you start scratching the window" );
     System.out.println("And then Elvira comes and lets you in");
     System.out.println("You go back to your bed for sleep");
-    System.out.println("Thanks for playing");
-     
+    System.out.println("Thanks for playing");     
     restart start = new restart();
-    start.playAgain();
-              
+    start.playAgain();              
     }    
 }
 
