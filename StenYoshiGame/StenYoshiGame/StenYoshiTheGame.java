@@ -1,10 +1,10 @@
 package StenYoshiGame;
 import java.util.Scanner;
 
-import javax.swing.SwingConstants;
+
 
 class StenYoshiTheGame {
-    private Character player;
+    public Character player;
     public static Scanner scanner = new Scanner(System.in);
     public String getPlayerName() {
        
@@ -27,17 +27,16 @@ public Character createPlayer(String name, String choice) {
         System.out.println("Welcome to StenYoshiTheGame!");
         String name = getPlayerName();
         String choice = chooseCharacter();
-        Character player = createPlayer(name, choice);
-
+        player = createPlayer(name, choice); 
+    
         System.out.println("Welcome, " + player.name + "! Your adventure begins...");
         player.displayStats();
         System.out.println("   /\\_/\\   ");
         System.out.println("  / o - \\  ");
         System.out.println(" (   \"   ) ");
         System.out.println("  \\~(*)~/  ");
-        System.out.println("   // \\\\   "); 
-
-        displayOptions(player);
+        System.out.println("   // \\\\   ");
+        bedRoomOptions(player);
         
     }
 
@@ -49,9 +48,10 @@ public Character createPlayer(String name, String choice) {
 
         System.out.print("Enter the number of your choice: ");
         return scanner.nextLine();
+        
     }
 
-    public void displayOptions(Character player) {
+    public void bedRoomOptions(Character player) {
         System.out.println("Choose your next action:");
         System.out.println("1. Go to bed");
         System.out.println("2. Start exploring");
@@ -73,19 +73,19 @@ public Character createPlayer(String name, String choice) {
             default:
                 System.out.println("Invalid choice.");
                 System.out.println();
-                displayOptions(player);
+                bedRoomOptions(player);
                 break;
         }
     }
 
     public void goToBed(Character player) {
         System.out.println("You are now rested.");
-        displayOptions(player);
+        bedRoomOptions(player);
     }
 
     public void startExploring(Character player) {
         System.out.println("You seem to be locked into the bedroom of your pet Elvira. She is now sleeping on the bed.");
-        displayOptions(player);
+        bedRoomOptions(player);
     }
 
     public void goToDoor(Character player) {
@@ -104,7 +104,7 @@ public Character createPlayer(String name, String choice) {
                 if (goAgain.equalsIgnoreCase("yes")) {
                     backToDoor();
                 } else {
-                    displayOptions(player);
+                    bedRoomOptions(player);
                 }
                 break;
             case "2":
@@ -117,7 +117,7 @@ public Character createPlayer(String name, String choice) {
             default:
                 System.out.println("Invalid choice.");
                 System.out.println();
-                displayOptions(player);
+                bedRoomOptions(player);
                 break;
         }
     }
@@ -137,7 +137,7 @@ switch (choice) {
             if (goAgain.equalsIgnoreCase("yes")) {
                 backToDoor();
             } else {
-                displayOptions(player);
+                bedRoomOptions(player);
             }
             break;
         case "2":
@@ -257,6 +257,8 @@ switch (choice) {
                 System.out.println("You start walking down the street when a stranger comes up to you.");
                 System.out.println("Its a male pet, he introduces himself as Deni. and gave you some candy");
                 System.out.println("You look at the candy in disbelief at first and then when you taste it you feel a sudden kick of energy");
+                player.increaseHealth(50);
+                System.out.println();
                 keepWalking();
                 break;
         
@@ -276,24 +278,25 @@ public void keepWalking() {
 
     switch (dogActions) {
         case "1":
-            System.out.println("You jump on the dogs head, the dog manage to bite you in the tail");
-            System.out.println("do you want to attack the dog again? (yes/no)");
-         String attackAgain = scanner.nextLine();
-             if (attackAgain.equalsIgnoreCase("yes")) {
-                System.out.println("You attack the dog again, and the dog runs away");
-                keepWalking();
-             }
-             else if (attackAgain.equalsIgnoreCase("no")){
-                System.out.println("You run away from the the dog.");
-             }
-             else {
-                System.out.println("Run you confused cat!");
-                break;
-             }
+            System.out.println("You jump on the dog's head, the dog manages to bite you in the tail");
+            player.reduceHealth(50); 
+            if (player.health > 0) {
+                System.out.println("Do you want to attack the dog again? (yes/no)");
+                String attackAgain = scanner.nextLine();
+                if (attackAgain.equalsIgnoreCase("yes")) {
+                    System.out.println("You attack the dog again, and the dog runs away");
+                    keepWalking();
+                } else if (attackAgain.equalsIgnoreCase("no")) {
+                    System.out.println("You decide not to attack the dog again. Remaining health: " + player.health);
+                } else {
+                    System.out.println("Run, you confused cat! Remaining health: " + player.health);
+                }
+            }
+            break;
+
         case "2":
-             System.out.println(" You run away from the dog.");
-             break;
-            
+            System.out.println("You run away from the dog. Remaining health: " + player.health);
+            break;
 
     }
 }
