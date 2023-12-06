@@ -287,6 +287,7 @@ switch (choice) {
                 case "3":
                 System.out.println("You jump up on the windowsill, and scratch the window, no one opens.");
                 theOutside();
+                break;
         
             default:
                 System.out.println("Invalid choice.");

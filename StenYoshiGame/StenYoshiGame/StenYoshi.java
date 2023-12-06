@@ -7,12 +7,12 @@ public class StenYoshi {
         
         
         StenYoshiTheGame game = new StenYoshiTheGame();
-        // restart start = new restart();
+        
         game.startGame();
-        // start.playAgain();              
+                     
 
         // game.theOutside();
-        // game.livingRoomOptions();
+        // game.livingRoomOptions();rob
         //game.keepWalking();
     }
 }
